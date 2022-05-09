@@ -17,6 +17,7 @@ import { posts } from "../data/datawork"
 
 export const Works = () => (
   <Container
+    id="works"
     bg="white"
     py={{
       base: "16",

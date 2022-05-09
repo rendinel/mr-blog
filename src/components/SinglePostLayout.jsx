@@ -8,11 +8,12 @@ import {
 } from "@chakra-ui/react"
 import * as React from "react"
 import { BlogPost } from "./BlogPost"
-import { posts } from "../data/datablogpost"
+import { ScrollToTop } from "./ScrollToTop"
 
-export const SinglePost = () => (
+export const SinglePostLayout = ({ postData, body }) => (
   <Box bg="bg-surface">
-    <Box bg="rgb(247,250,252)" color="on-accent">
+    <ScrollToTop />
+    <Box bg="bg-accent" color="on-accent">
       <Container
         pt={{
           base: "16",
@@ -39,15 +40,24 @@ export const SinglePost = () => (
           >
             <Stack spacing="4">
               <Heading
-                color="blue.600"
                 size={useBreakpointValue({
                   base: "md",
                   md: "lg",
                 })}
               >
-                Latest blog posts
+                {postData.title}
               </Heading>
             </Stack>
+            <Text
+              fontSize={{
+                base: "lg",
+                md: "xl",
+              }}
+              maxW="2xl"
+              color="on-accent-muted"
+            >
+              {postData.excerpt}
+            </Text>
           </Stack>
         </Stack>
       </Container>
@@ -74,7 +84,7 @@ export const SinglePost = () => (
             md: "16",
           }}
         >
-          <BlogPost post={posts[0]} isHero />
+          <BlogPost postData={postData} body={body} isHero />
         </Stack>
       </Stack>
     </Container>

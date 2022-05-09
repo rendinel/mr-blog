@@ -3,12 +3,14 @@ import {
   Flex,
   Heading,
   HStack,
+  Image,
   Img,
   Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react"
 import * as React from "react"
+import myself from "../images/myself.jpg"
 import { MdGroup, MdPermPhoneMsg } from "react-icons/md"
 
 export const Hero = () => {
@@ -115,7 +117,7 @@ export const Hero = () => {
               h="full"
               objectFit="cover"
               objectPosition="right"
-              src="https://images.unsplash.com/photo-1603714228681-b399854b8f80?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FsbCUyMGNlbnRlcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              src={myself}
             />
           </Box>
         </Flex>

@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Button,
   Container,
   FormControl,
@@ -9,12 +10,14 @@ import {
   Text,
   useBreakpointValue,
   Textarea,
+  Flex,
 } from "@chakra-ui/react"
 import * as React from "react"
-// import { Logo } from "./Logo"
+import logo from "../assets/logofooter.png"
 
 export const Contact = () => (
   <Container
+    id="contact"
     maxW="md"
     py={{
       base: "12",
@@ -23,7 +26,9 @@ export const Contact = () => (
   >
     <Stack spacing="8">
       <Stack spacing="6" align="center">
-        {/* <Logo /> */}
+        <Flex justifyContent="center" w="full">
+          <Avatar boxSize="10" name="logo" src={logo} />
+        </Flex>
         <Stack spacing="3" textAlign="center">
           <Heading
             size={useBreakpointValue({

@@ -1,15 +1,9 @@
 import React from "react"
+import { ErrorPageLayout } from "../components"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { theme } from "@chakra-ui/pro-theme"
-import {
-  Layout,
-  Hero,
-  Contact,
-  Works,
-  HomePageFeaturedBlogPosts,
-} from "../components"
 
-export default function Home() {
+const notFound = () => {
   const myTheme = extendTheme(
     {
       colors: { ...theme.colors, brand: theme.colors.blue },
@@ -18,12 +12,9 @@ export default function Home() {
   )
   return (
     <ChakraProvider theme={myTheme}>
-      <Layout>
-        <Hero />
-        <Works />
-        <Contact />
-        <HomePageFeaturedBlogPosts />
-      </Layout>
+      <ErrorPageLayout />
     </ChakraProvider>
   )
 }
+
+export default notFound
