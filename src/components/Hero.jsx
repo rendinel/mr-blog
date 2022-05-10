@@ -3,7 +3,6 @@ import {
   Flex,
   Heading,
   HStack,
-  Image,
   Img,
   Stack,
   Text,

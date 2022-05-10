@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { theme } from "@chakra-ui/pro-theme"
-import { AllPostsLayout, Layout } from "../components"
+import { AllPostsLayout, GlobalLayout } from "../components"
 
 const allPosts = ({ pageContext, data }) => {
   const { currentPage, numPages } = pageContext
@@ -25,7 +25,7 @@ const allPosts = ({ pageContext, data }) => {
   )
   return (
     <ChakraProvider theme={myTheme}>
-      <Layout>
+      <GlobalLayout>
         <AllPostsLayout
           numPages={numPages}
           currentPage={currentPage}
@@ -33,7 +33,7 @@ const allPosts = ({ pageContext, data }) => {
           nextPage={nextPage}
           posts={posts}
         />
-      </Layout>
+      </GlobalLayout>
     </ChakraProvider>
   )
 }
@@ -57,6 +57,11 @@ export const pageQuery = graphql`
             excerpt
             category
             featureImage {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED)
+              }
+            }
+            authorAvatar {
               childImageSharp {
                 gatsbyImageData(placeholder: BLURRED)
               }

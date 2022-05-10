@@ -4,22 +4,22 @@ import {
   Heading,
   HStack,
   Icon,
-  Link,
   Stack,
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react"
 import * as React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 import { VscCircleFilled } from "react-icons/vsc"
 import { AiOutlineArrowLeft } from "react-icons/ai"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export const BlogPost = ({ body, postData, isHero }) => {
-  const { author, category, slug, title, featureImage, date } = postData
+  const { author, category, title, featureImage, date } = postData
   const img = getImage(featureImage)
   return (
-    <Link
+    <Box
       _hover={{
         textDecor: "none",
       }}
@@ -68,11 +68,13 @@ export const BlogPost = ({ body, postData, isHero }) => {
               {category}
             </Button>
           </HStack>
-          <Link fontWeight="semibold" color="accent">
-            <Icon as={AiOutlineArrowLeft} boxSize="2" /> Home
+          <Link to="/blog">
+            <Text fontWeight="semibold" color="accent">
+              <Icon as={AiOutlineArrowLeft} boxSize="3" /> Back to Blog
+            </Text>
           </Link>
         </Stack>
       </Stack>
-    </Link>
+    </Box>
   )
 }

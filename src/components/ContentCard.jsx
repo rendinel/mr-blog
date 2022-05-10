@@ -1,16 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import {
-  Avatar,
-  Box,
-  Heading,
-  HStack,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react"
+import { Box, Heading, HStack, Stack, Text } from "@chakra-ui/react"
 
-// import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const ContentCard = ({
   date,
@@ -18,9 +10,10 @@ export const ContentCard = ({
   excerpt,
   slug,
   category,
-  image,
+  img,
+  author,
+  avatar,
 }) => {
-  // const img = getImage(image)
   return (
     <>
       <Link
@@ -32,30 +25,41 @@ export const ContentCard = ({
         role="group"
       >
         <Stack spacing="8">
-          <Box overflow="hidden">
-            <Image
-              src={image}
+          <Box
+            transition="all 0.2s"
+            _groupHover={{
+              transform: "scale(1.05)",
+            }}
+            overflow="hidden"
+          >
+            <GatsbyImage
+              image={img}
               alt={title}
-              width="full"
+              width="100%"
               height="15rem"
               objectFit="cover"
-              transition="all 0.2s"
-              _groupHover={{
-                transform: "scale(1.05)",
-              }}
             />
           </Box>
           <Stack spacing="3">
             <Text fontSize="sm" fontWeight="semibold" color="accent">
               {category}
             </Text>
-            <Heading size="xs">{title}</Heading>
+            <Heading isTruncated size="xs">
+              {title}
+            </Heading>
             <Text color="muted">{excerpt}</Text>
           </Stack>
           <HStack>
-            <Avatar src={image} boxSize="10" />
+            <GatsbyImage
+              image={avatar}
+              alt={author}
+              style={{ borderRadius: "10rem" }}
+              width="4rem"
+              height="4rem"
+              objectFit="cover"
+            />
             <Box fontSize="sm">
-              {/* <Text fontWeight="medium">{post.author.name}</Text> */}
+              <Text fontWeight="medium">{author}</Text>
               <Text color="muted">{date}</Text>
             </Box>
           </HStack>

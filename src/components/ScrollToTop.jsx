@@ -12,8 +12,8 @@ export const ScrollToTop = () => {
   return (
     <Button
       pos="fixed"
-      bottom="3rem"
-      right="1.5rem"
+      bottom="1rem"
+      right="0.5rem"
       variant="primary"
       size="md"
       onClick={scrollToTop}

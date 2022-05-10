@@ -16,15 +16,6 @@ const singlePost = ({ data }) => {
   return (
     <ChakraProvider theme={myTheme}>
       <SinglePostLayout postData={postData} body={body} />
-      {/* <BlogPost
-          date={data.mdx.frontmatter.date}
-          excerpt={data.mdx.frontmatter.excerpt}
-          category={data.mdx.frontmatter.category}
-          title={data.mdx.frontmatter.title}
-          image={data.mdx.frontmatter.featureImage}
-          body={data.mdx.body}
-          isHero
-        /> */}
     </ChakraProvider>
   )
 }

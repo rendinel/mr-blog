@@ -2,11 +2,12 @@ import React from "react"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { theme } from "@chakra-ui/pro-theme"
 import {
-  Layout,
+  GlobalLayout,
   Hero,
   Contact,
   Works,
   HomePageFeaturedBlogPosts,
+  Layout,
 } from "../components"
 
 export default function Home() {
@@ -19,10 +20,12 @@ export default function Home() {
   return (
     <ChakraProvider theme={myTheme}>
       <Layout>
-        <Hero />
-        <Works />
-        <Contact />
-        <HomePageFeaturedBlogPosts />
+        <GlobalLayout>
+          <Hero />
+          <Works />
+          <Contact />
+          <HomePageFeaturedBlogPosts />
+        </GlobalLayout>
       </Layout>
     </ChakraProvider>
   )

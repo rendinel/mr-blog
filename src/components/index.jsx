@@ -1,7 +1,7 @@
 import { ErrorPageLayout } from "./ErrorPageLayout"
 import { Navbar } from "./Navbar"
 import { Footer } from "./Footer"
-import { Layout } from "./Layout"
+import { GlobalLayout } from "./GlobalLayout"
 import { Contact } from "./Contact"
 import { Hero } from "./Hero"
 import { Works } from "./Works"
@@ -12,15 +12,19 @@ import { AllPostsLayout } from "./AllPostsLayout"
 import { SinglePostLayout } from "./SinglePostLayout"
 import { BlogPost } from "./BlogPost"
 import { ScrollToTop } from "./ScrollToTop"
+import { Algolia } from "./Algolia"
+import { Layout } from "./layout"
 
 export {
+  Layout,
+  Algolia,
   ScrollToTop,
   BlogPost,
   SinglePostLayout,
   ErrorPageLayout,
   Navbar,
   Footer,
-  Layout,
+  GlobalLayout,
   Hero,
   Contact,
   Works,
