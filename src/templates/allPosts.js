@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { theme } from "@chakra-ui/pro-theme"
-import { AllPostsLayout, GlobalLayout } from "../components"
+import { AllPostsLayout, GlobalLayout, Seo } from "../components"
 
 const allPosts = ({ pageContext, data }) => {
   const {
@@ -28,6 +28,7 @@ const allPosts = ({ pageContext, data }) => {
   )
   return (
     <ChakraProvider theme={myTheme}>
+      <Seo />
       <GlobalLayout>
         <AllPostsLayout
           numPages={numPages}

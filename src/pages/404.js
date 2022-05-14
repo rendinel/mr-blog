@@ -1,5 +1,5 @@
 import React from "react"
-import { ErrorPageLayout } from "../components"
+import { ErrorPageLayout, Seo } from "../components"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { theme } from "@chakra-ui/pro-theme"
 
@@ -12,6 +12,7 @@ const notFound = () => {
   )
   return (
     <ChakraProvider theme={myTheme}>
+      <Seo />
       <ErrorPageLayout />
     </ChakraProvider>
   )

@@ -3,10 +3,20 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: `Nutrition,Training,Research`,
+    description: `Awesome Blog with a lot of scientific paper about training and nutrition.`,
+    titleTemplate: `%s | Dr.Nutrition Blog`,
+    siteUrl: `https://mr-blog-3.netlify.app/`,
+    twitterUsername: `@marco_rendine`,
+    image: "/profilepic.png",
+  },
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: "@chakra-ui/gatsby-plugin",
       options: {

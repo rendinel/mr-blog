@@ -16,8 +16,10 @@ import { Algolia } from "./Algolia"
 import { Layout } from "./layout"
 import { CategoryLayout } from "./CategoryLayout"
 import { Video } from "./Video"
+import { Seo } from "./Seo"
 
 export {
+  Seo,
   CategoryLayout,
   Layout,
   Algolia,

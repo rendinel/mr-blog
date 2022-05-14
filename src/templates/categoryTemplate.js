@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { theme } from "@chakra-ui/pro-theme"
-import { CategoryLayout, GlobalLayout } from "../components"
+import { CategoryLayout, GlobalLayout, Seo } from "../components"
 
 const categoryTemplate = props => {
   const {
@@ -23,6 +23,7 @@ const categoryTemplate = props => {
   )
   return (
     <ChakraProvider theme={myTheme}>
+      <Seo />
       <GlobalLayout>
         <CategoryLayout
           distinct={distinct}

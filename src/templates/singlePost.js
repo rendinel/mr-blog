@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { theme } from "@chakra-ui/pro-theme"
-import { SinglePostLayout } from "../components"
+import { SinglePostLayout, Seo } from "../components"
 import { graphql } from "gatsby"
 
 const singlePost = ({ data }) => {
@@ -15,6 +15,7 @@ const singlePost = ({ data }) => {
   )
   return (
     <ChakraProvider theme={myTheme}>
+      <Seo />
       <SinglePostLayout postData={postData} body={body} />
     </ChakraProvider>
   )

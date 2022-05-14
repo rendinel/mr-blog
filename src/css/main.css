@@ -46,13 +46,12 @@
 }
 
 .video-container {
-  margin: 0 auto;
+  background-color: red;
   width: 90vw;
   max-width: 700px;
 }
 
 .video-container .video {
-  margin: 2rem 0;
   position: relative;
   padding-top: 56.25%;
   overflow: hidden;

@@ -4,10 +4,11 @@ import { theme } from "@chakra-ui/pro-theme"
 import {
   GlobalLayout,
   Hero,
-  Contact,
-  Works,
+  // Contact,
+  // Works,
   HomePageFeaturedBlogPosts,
-  Layout,
+  // Layout,
+  Seo,
 } from "../components"
 
 export default function Home() {
@@ -19,14 +20,15 @@ export default function Home() {
   )
   return (
     <ChakraProvider theme={myTheme}>
-      <Layout>
-        <GlobalLayout>
-          <Hero />
-          <HomePageFeaturedBlogPosts />
-          {/* <Contact /> */}
-          {/* <Works /> */}
-        </GlobalLayout>
-      </Layout>
+      {/* <Layout> */}
+      <GlobalLayout>
+        <Seo />
+        <Hero />
+        <HomePageFeaturedBlogPosts />
+        {/* <Contact /> */}
+        {/* <Works /> */}
+      </GlobalLayout>
+      {/* </Layout> */}
     </ChakraProvider>
   )
 }

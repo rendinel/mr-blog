@@ -1,5 +1,5 @@
 import React from "react"
-import { Contact, GlobalLayout } from "../components"
+import { Contact, GlobalLayout, Seo } from "../components"
 import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { theme } from "@chakra-ui/pro-theme"
 
@@ -13,6 +13,7 @@ const contacts = () => {
   return (
     <ChakraProvider theme={myTheme}>
       <GlobalLayout>
+        <Seo />
         <Contact />
       </GlobalLayout>
     </ChakraProvider>
