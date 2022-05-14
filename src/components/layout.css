@@ -1,45 +1,68 @@
 .search-section .ais-SearchBox {
-  width: 90vw;
-  max-width: 400px;
   margin: 0 auto;
   margin-bottom: 1rem;
 }
 
-.search-section .ais-SearchBox form {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 3rem 3rem;
-}
-
 .search-section .ais-SearchBox form button {
-  border: transparent;
-  font-size: 1.1rem;
+  display: none;
 }
 
 .search-section .ais-SearchBox form input {
-  width: 90%;
-  background-color: #2b6cb0;
-  border-radius: 0.25rem;
-  border-color: rgba(55, 65, 81, 1);
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
   font-size: 1rem;
   line-height: 1.5rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
-  color: #fff;
+  color: #2b6cb0;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
+}
+
+::-webkit-input-placeholder {
+  color: #2b6cb0;
+}
+:-moz-placeholder {
+  color: #2b6cb0;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: #2b6cb0;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #2b6cb0;
+}
+::-ms-input-placeholder {
+  color: #2b6cb0;
 }
 
 ::placeholder {
-  color: white;
+  color: #2b6cb0;
   opacity: 1;
 }
 
-::-ms-input-placeholder {
-  color: white;
+.video-container {
+  background-color: red;
+  width: 90vw;
+  max-width: 700px;
+}
+
+.video-container .video {
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.video-container .video iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
 }

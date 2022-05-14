@@ -22,9 +22,9 @@ export default function Home() {
       <Layout>
         <GlobalLayout>
           <Hero />
-          <Works />
-          <Contact />
           <HomePageFeaturedBlogPosts />
+          {/* <Contact /> */}
+          {/* <Works /> */}
         </GlobalLayout>
       </Layout>
     </ChakraProvider>

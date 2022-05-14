@@ -14,8 +14,11 @@ import { BlogPost } from "./BlogPost"
 import { ScrollToTop } from "./ScrollToTop"
 import { Algolia } from "./Algolia"
 import { Layout } from "./layout"
+import { CategoryLayout } from "./CategoryLayout"
+import { Video } from "./Video"
 
 export {
+  CategoryLayout,
   Layout,
   Algolia,
   ScrollToTop,
@@ -32,4 +35,5 @@ export {
   AllPostsLayout,
   Pagination,
   ContentCard,
+  Video,
 }

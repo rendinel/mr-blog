@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { Box, Heading, HStack, Stack, Text } from "@chakra-ui/react"
-
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export const ContentCard = ({

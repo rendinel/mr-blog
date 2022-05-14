@@ -16,8 +16,8 @@ export const Footer = () => (
     role="contentinfo"
     w="full"
     py={{
-      base: "12",
-      md: "16",
+      base: "6",
+      md: "8",
     }}
   >
     <Stack
@@ -58,8 +58,8 @@ export const Footer = () => (
         </ButtonGroup>
       </Stack>
       <Text fontSize="sm" color="black">
-        &copy; {new Date().getFullYear()} Chakra UI Pro, Inc. All rights
-        reserved.
+        &copy; {new Date().getFullYear()} Dr.Nutrition Inc. by Marco Rendine All
+        rights reserved.
       </Text>
     </Stack>
   </Container>

@@ -64,9 +64,11 @@ export const BlogPost = ({ body, postData, isHero }) => {
             </Text>
           </Stack>
           <HStack>
-            <Button variant="primary" size="xs">
-              {category}
-            </Button>
+            <Link to={`/blog/${category}`}>
+              <Button variant="primary" size="md">
+                {category}
+              </Button>
+            </Link>
           </HStack>
           <Link to="/blog">
             <Text fontWeight="semibold" color="accent">

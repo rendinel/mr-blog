@@ -5,6 +5,9 @@ import { theme } from "@chakra-ui/pro-theme"
 import { AllPostsLayout, GlobalLayout } from "../components"
 
 const allPosts = ({ pageContext, data }) => {
+  const {
+    uniquecat: { distinct },
+  } = data
   const { currentPage, numPages } = pageContext
   const prevPage =
     currentPage - 1 === 0 || currentPage - 1 === 1
@@ -32,6 +35,7 @@ const allPosts = ({ pageContext, data }) => {
           prevPage={prevPage}
           nextPage={nextPage}
           posts={posts}
+          distinct={distinct}
         />
       </GlobalLayout>
     </ChakraProvider>
@@ -69,6 +73,9 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    uniquecat: allMdx {
+      distinct(field: frontmatter___category)
     }
   }
 `

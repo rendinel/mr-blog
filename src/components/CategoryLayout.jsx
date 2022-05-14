@@ -11,22 +11,10 @@ import {
 } from "@chakra-ui/react"
 import * as React from "react"
 import { getImage } from "gatsby-plugin-image"
-import { Pagination } from "./Pagination"
 import { ContentCard } from "./ContentCard"
 import { Link } from "gatsby"
 
-export const AllPostsLayout = ({
-  numPages,
-  currentPage,
-  prevPage,
-  nextPage,
-  posts,
-  distinct,
-}) => {
-  const isMobile = useBreakpointValue({
-    base: true,
-    md: false,
-  })
+export const CategoryLayout = ({ posts, titleCategory, distinct }) => {
   return (
     <Box bg="bg-surface">
       <Container
@@ -67,6 +55,14 @@ export const AllPostsLayout = ({
                 >
                   Latest blog posts
                 </Heading>
+                <Heading
+                  size={useBreakpointValue({
+                    base: "sm",
+                    md: "md",
+                  })}
+                >
+                  Category/ {titleCategory}
+                </Heading>
               </Stack>
               <Text
                 color="muted"
@@ -79,23 +75,13 @@ export const AllPostsLayout = ({
               </Text>
               <Flex>
                 {distinct.map((cat, i) => {
-                  if (!isMobile) {
-                    return (
-                      <Link key={i} to={`/blog/${cat}`}>
-                        <Button variant="primary" mr="1" size="lg">
-                          {cat}
-                        </Button>
-                      </Link>
-                    )
-                  } else {
-                    return (
-                      <Link key={i} to={`/blog/${cat}`}>
-                        <Button variant="primary" mr="1" size="md">
-                          {cat}
-                        </Button>
-                      </Link>
-                    )
-                  }
+                  return (
+                    <Link key={i} to={`/blog/${cat}`}>
+                      <Button variant="primary" mr="1" size="lg">
+                        {cat}
+                      </Button>
+                    </Link>
+                  )
                 })}
               </Flex>
             </Stack>
@@ -121,7 +107,7 @@ export const AllPostsLayout = ({
                 excerpt,
                 date,
                 category,
-              } = post.node.frontmatter
+              } = post.frontmatter
               const img = getImage(featureImage)
               const avatar = getImage(authorAvatar)
               return (
@@ -139,12 +125,6 @@ export const AllPostsLayout = ({
               )
             })}
           </SimpleGrid>
-          <Pagination
-            nextPage={nextPage}
-            currentPage={currentPage}
-            prevPage={prevPage}
-            numPages={numPages}
-          />
         </Stack>
       </Container>
     </Box>

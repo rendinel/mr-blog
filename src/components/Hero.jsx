@@ -1,20 +1,20 @@
 import {
   Box,
-  Flex,
+  Button,
   Heading,
-  HStack,
   Img,
+  Link,
   Stack,
   Text,
-  useColorModeValue,
+  useColorModeValue as mode,
 } from "@chakra-ui/react"
 import * as React from "react"
-import myself from "../images/myself.jpg"
-import { MdGroup, MdPermPhoneMsg } from "react-icons/md"
+import { HiPlay } from "react-icons/hi"
+import myself from "../images/profilepic.png"
 
 export const Hero = () => {
   return (
-    <Box as="section">
+    <Box as="section" bg={mode("gray.50", "gray.800")} pt="16" pb="24">
       <Box
         maxW={{
           base: "xl",
@@ -25,101 +25,127 @@ export const Hero = () => {
           base: "6",
           md: "8",
         }}
-        py="12"
       >
-        <Flex
-          align="center"
-          justify="center"
+        <Stack
           direction={{
-            base: "column-reverse",
-            md: "row",
+            base: "column",
+            lg: "row",
           }}
+          spacing={{
+            base: "3rem",
+            lg: "2rem",
+          }}
+          mt="8"
+          align={{
+            lg: "center",
+          }}
+          justify="space-between"
         >
-          <Box flex="1" maxW="440px">
-            <Heading
-              size="2xl"
-              fontWeight="extrabold"
-              color={useColorModeValue("blue.600", "blue.300")}
-            >
-              Ready to break down the walls?
-            </Heading>
-            <Text
-              fontSize="lg"
-              fontWeight="medium"
-              color={useColorModeValue("gray.600", "inherit")}
-              mt="6"
-            >
-              Our support gurus are help you achieve design enlightenment. Check
-              our our FAQs, send us an email or give us a call.
-            </Text>
-
-            <Stack
-              mt={{
-                base: "8",
-                md: "16",
-              }}
-              spacing="4"
-              fontWeight="extrabold"
-            >
-              <HStack
-                spacing="5"
-                color={useColorModeValue("blue.600", "blue.300")}
-              >
-                <Box fontSize="3xl" as={MdPermPhoneMsg} />
-                <Text
-                  fontSize={{
-                    base: "xl",
-                    md: "2xl",
-                  }}
-                >
-                  1 800 513 4545
-                </Text>
-              </HStack>
-              <HStack
-                spacing="5"
-                color={useColorModeValue("blue.600", "blue.300")}
-              >
-                <Box fontSize="3xl" as={MdGroup} />
-                <Text
-                  fontSize={{
-                    base: "xl",
-                    md: "2xl",
-                  }}
-                >
-                  Free design consultations
-                </Text>
-              </HStack>
-            </Stack>
-          </Box>
-
-          <Box
-            aria-hidden
-            className="spacer"
-            flexShrink={0}
-            boxSize={{
-              base: "10",
-              xl: "20",
-            }}
-          />
-
           <Box
             flex="1"
-            maxW="560px"
+            maxW={{
+              lg: "520px",
+            }}
+          >
+            <Text
+              size="xs"
+              textTransform="uppercase"
+              fontWeight="semibold"
+              color={mode("blue.600", "blue.300")}
+              letterSpacing="wide"
+            >
+              Hire Talents
+            </Text>
+            <Heading
+              as="h1"
+              size="3xl"
+              color={mode("blue.600", "blue.300")}
+              mt="8"
+              fontWeight="extrabold"
+              letterSpacing="tight"
+            >
+              Get world class talents for your project
+            </Heading>
+            <Text
+              color={mode("gray.600", "gray.400")}
+              mt="4"
+              fontSize="lg"
+              fontWeight="medium"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Text>
+            <Stack
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              spacing="4"
+              mt="8"
+            >
+              <Button
+                size="lg"
+                minW="210px"
+                colorScheme="blue"
+                height="14"
+                px="8"
+              >
+                Get Started
+              </Button>
+              <Button
+                size="lg"
+                bg="white"
+                color="gray.900"
+                _hover={{
+                  bg: "gray.50",
+                }}
+                height="14"
+                px="8"
+                shadow="base"
+                leftIcon={<Box as={HiPlay} fontSize="2xl" />}
+              >
+                Watch Demo
+              </Button>
+            </Stack>
+            <Text mt="8" color={mode("gray.600", "gray.400")}>
+              Already have an account store?{" "}
+              <Link href="#" textDecoration="underline">
+                Log in
+              </Link>
+            </Text>
+          </Box>
+          <Box
+            pos="relative"
+            w={{
+              base: "full",
+              lg: "560px",
+            }}
             h={{
-              base: "400px",
-              md: "460px",
+              base: "auto",
+              lg: "560px",
             }}
           >
             <Img
-              alt="Call center"
               w="full"
-              h="full"
+              pos="relative"
+              zIndex="1"
+              h={{
+                lg: "100%",
+              }}
               objectFit="cover"
-              objectPosition="right"
               src={myself}
+              alt="Screening talent"
+            />
+            <Box
+              pos="absolute"
+              w="100%"
+              h="100%"
+              top="-4"
+              left="-4"
+              bg={mode("gray.200", "gray.700")}
             />
           </Box>
-        </Flex>
+        </Stack>
       </Box>
     </Box>
   )
